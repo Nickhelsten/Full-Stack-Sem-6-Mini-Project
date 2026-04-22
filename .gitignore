@@ -1,0 +1,22 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+target/
+dist/
+build/
+
+# Logs
+*.log
+*.err.log
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Environment files
+.env
+.env.*
+!.env.example

@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: full-stack-mini-project-backend
+    runtime: java
+    rootDir: backend
+    buildCommand: ./mvnw clean install
+    startCommand: java -jar target/*.jar
+
+  - type: web
+    name: full-stack-mini-project-frontend
+    runtime: static
+    rootDir: frontend
+    buildCommand: npm install && npm run build
+    staticPublishPath: dist
+    envVars:
+      - key: VITE_API_URL
+        value: https://full-stack-mini-project-backend.onrender.com/api
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
